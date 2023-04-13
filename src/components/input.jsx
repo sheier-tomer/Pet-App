@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import axios from 'axios';
 function Form() {
   const [petName, setpetName] = useState('');
   const [petType, setpetType] = useState('');
@@ -7,8 +7,21 @@ function Form() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+   // const { petName, petType, comment } = this.state;
     console.log(`petName: ${petName}, petType: ${petType}, Comment: ${comment}`);
+    //const { petName, petType, comment } = this.state;
     // You can replace the console.log statement with your own code to handle the form submission.
+    //works but diables cross origin in developr modd
+    axios.post('https://84ilpny30g.execute-api.us-east-1.amazonaws.com/default/petSeverlessAppFunction', { key1: petName, key2: petType, key3: comment })
+      .then(response => {
+        // Handle response
+        console.log("info sent to db")
+      })
+      .catch(error => {
+        // Handle error
+        console.log("info did not send to db")
+      });
+
   }
 
   return (
