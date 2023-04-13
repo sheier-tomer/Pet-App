@@ -11,7 +11,7 @@ function Form() {
     console.log(`petName: ${petName}, petType: ${petType}, Comment: ${comment}`);
     //const { petName, petType, comment } = this.state;
     // You can replace the console.log statement with your own code to handle the form submission.
-    //works but diables cross origin in developr modd
+    //works but diables cross origin in developr mode
     axios.post('https://84ilpny30g.execute-api.us-east-1.amazonaws.com/default/petSeverlessAppFunction', { key1: petName, key2: petType, key3: comment })
       .then(response => {
         // Handle response
