@@ -8,12 +8,17 @@ function Form() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-   // const { petName, petType, comment } = this.state;
+
+
+    let uidnum = Math.floor(Math.random() * 10000);
+    uidnum = uidnum.toString();
+  
+
     console.log(`petName: ${petName}, petType: ${petType}, Comment: ${comment}, file: ${file} `);
     //const { petName, petType, comment } = this.state;å
     // You can replace the console.log statement with your own code to handle the form submission.
     //works but diables cross origin in developr mode
-    axios.post('https://84ilpny30g.execute-api.us-east-1.amazonaws.com/default/petSeverlessAppFunction', { name: petName, uid: "1234", message: comment, fileName: file.name })
+    axios.post('https://84ilpny30g.execute-api.us-east-1.amazonaws.com/default/petSeverlessAppFunction', { name: petName, uid: uidnum, type:petType,  message: comment, fileName: file.name } )
       .then(response => {
         // Handle response
         console.log("info sent to db")
@@ -24,6 +29,9 @@ function Form() {
       });
 
   }
+
+
+
 
   const handleImageUpload  = (event) => {
     const file = event.target.files[0];
