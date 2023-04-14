@@ -10,10 +10,10 @@ function Form() {
     event.preventDefault();
    // const { petName, petType, comment } = this.state;
     console.log(`petName: ${petName}, petType: ${petType}, Comment: ${comment}, file: ${file} `);
-    //const { petName, petType, comment } = this.state;
+    //const { petName, petType, comment } = this.state;å
     // You can replace the console.log statement with your own code to handle the form submission.
     //works but diables cross origin in developr mode
-    axios.post('https://84ilpny30g.execute-api.us-east-1.amazonaws.com/default/petSeverlessAppFunction', { key1: petName, key2: petType, key3: comment })
+    axios.post('https://84ilpny30g.execute-api.us-east-1.amazonaws.com/default/petSeverlessAppFunction', { name: petName, uid: "1234", message: comment, fileName: file.name })
       .then(response => {
         // Handle response
         console.log("info sent to db")
