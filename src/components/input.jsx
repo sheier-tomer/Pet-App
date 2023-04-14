@@ -4,11 +4,12 @@ function Form() {
   const [petName, setpetName] = useState('');
   const [petType, setpetType] = useState('');
   const [comment, setComment] = useState('');
+  const [file, setFile] = useState(null);
 
   const handleSubmit = (event) => {
     event.preventDefault();
    // const { petName, petType, comment } = this.state;
-    console.log(`petName: ${petName}, petType: ${petType}, Comment: ${comment}`);
+    console.log(`petName: ${petName}, petType: ${petType}, Comment: ${comment}, file: ${file} `);
     //const { petName, petType, comment } = this.state;
     // You can replace the console.log statement with your own code to handle the form submission.
     //works but diables cross origin in developr mode
@@ -22,6 +23,11 @@ function Form() {
         console.log("info did not send to db")
       });
 
+  }
+
+  const handleImageUpload  = (event) => {
+    const file = event.target.files[0];
+    setFile(file);
   }
 
   return (
@@ -66,6 +72,17 @@ function Form() {
             border: '1px solid #ccc' 
           }}></textarea>
         </div>
+        <div style={{ marginBottom: '10px' }}>
+        <label htmlFor="petImage">Pet Image:</label>
+        <input type="file" id="petImage" name="petImage" onChange={(event) => handleImageUpload(event)} required style={{ 
+          display: 'block', 
+          width: '100%', 
+          padding: '10px', 
+          borderRadius: '5px', 
+          border: '1px solid #ccc' 
+        }} />
+      </div>
+
         <button type="submit" style={{ 
           display: 'block', 
           backgroundColor: '#4CAF50', 
