@@ -1,0 +1,17 @@
+{
+  "resourceName": "petTomerBucket",
+  "policyUUID": "0d7c1c15",
+  "bucketName": "petappc53325ce7d594eef893ab2d057c4d05e",
+  "storageAccess": "authAndGuest",
+  "guestAccess": [
+    "CREATE_AND_UPDATE",
+    "READ"
+  ],
+  "authAccess": [
+    "CREATE_AND_UPDATE",
+    "READ",
+    "DELETE"
+  ],
+  "triggerFunction": "NONE",
+  "groupAccess": {}
+}

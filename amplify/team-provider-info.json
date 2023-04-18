@@ -10,6 +10,11 @@
       "StackName": "amplify-petapp-dev-223738",
       "StackId": "arn:aws:cloudformation:us-east-1:620339869704:stack/amplify-petapp-dev-223738/fe8bac30-d8da-11ed-b123-0e6676530f83",
       "AmplifyAppId": "d81xyhw794l1x"
+    },
+    "categories": {
+      "auth": {
+        "petapp14d65a7c": {}
+      }
     }
   }
 }
