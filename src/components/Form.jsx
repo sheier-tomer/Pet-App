@@ -43,6 +43,17 @@ function Form() {
               border: '1px solid #ccc' 
             }}></textarea>
           </div>
+          <div style={{ marginBottom: '10px' }}>
+          <label htmlFor="petImage">Pet Image:</label>
+          <input type="file" id="petImage" name="petImage" onChange={(event) => handleImageUpload(event)} required style={{ 
+            display: 'block', 
+            width: '100%', 
+            padding: '10px', 
+            borderRadius: '5px', 
+            border: '1px solid #ccc' 
+          }} />
+        </div>
+
           <button type="submit" style={{ 
             display: 'block', 
             backgroundColor: '#4CAF50', 
