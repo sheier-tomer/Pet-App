@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import '../App.css';
 function Form() {
   const [petName, setpetName] = useState('');
   const [petType, setpetType] = useState('');
@@ -39,69 +40,30 @@ function Form() {
   }
 
   return (
-    <div style={{ 
-        maxWidth: '500px', 
-        margin: '0 auto', 
-        padding: '20px', 
-        border: '1px solid #ccc', 
-        borderRadius: '5px',
-        opacity: '0',
-        transition: 'opacity 0.5s ease-in-out'
-      }} className="form-container">
-      <h1>Post your pet!</h1>
-      <form onSubmit={handleSubmit} >
-        <div style={{ marginBottom: '10px' }}>
-          <label htmlFor="petName">petName:</label>
-          <input type="text" id="petName" name="petName" value={petName} onChange={(event) => setpetName(event.target.value)} required style={{ 
-            display: 'block', 
-            width: '100%', 
-            padding: '10px', 
-            borderRadius: '5px', 
-            border: '1px solid #ccc' 
-          }} />
-        </div>
-        <div style={{ marginBottom: '10px' }}>
-          <label htmlFor="petType"> petType:</label>
-          <input type="petType" id="petType" name="petType" value={petType} onChange={(event) => setpetType(event.target.value)} required style={{ 
-            display: 'block', 
-            width: '100%', 
-            padding: '10px', 
-            borderRadius: '5px', 
-            border: '1px solid #ccc' 
-          }} />
-        </div>
-        <div style={{ marginBottom: '10px' }}>
-          <label htmlFor="comment">Comment:</label>
-          <textarea id="comment" name="comment" value={comment} onChange={(event) => setComment(event.target.value)} rows="5" required style={{ 
-            display: 'block', 
-            width: '100%', 
-            padding: '10px', 
-            borderRadius: '5px', 
-            border: '1px solid #ccc' 
-          }}></textarea>
-        </div>
-        <div style={{ marginBottom: '10px' }}>
-        <label htmlFor="petImage">Pet Image:</label>
-        <input type="file" id="petImage" name="petImage" onChange={(event) => handleImageUpload(event)} required style={{ 
-          display: 'block', 
-          width: '100%', 
-          padding: '10px', 
-          borderRadius: '5px', 
-          border: '1px solid #ccc' 
-        }} />
+    <div className="form-container">
+    <h1>Post your pet!</h1>
+    <form onSubmit={handleSubmit} >
+      <div className="form-input">
+        <label htmlFor="petName">petName:</label>
+        <input type="text" id="petName" name="petName" value={petName} onChange={(event) => setpetName(event.target.value)} required />
       </div>
-
-        <button type="submit" style={{ 
-          display: 'block', 
-          backgroundColor: '#4CAF50', 
-          color: 'white', 
-          padding: '10px 20px', 
-          border: 'none', 
-          borderRadius: '5px', 
-          cursor: 'pointer' 
-        }}>Submit</button>
-      </form>
-    </div>
+      <div className="form-input">
+        <label htmlFor="petType">petType:</label>
+        <input type="petType" id="petType" name="petType" value={petType} onChange={(event) => setpetType(event.target.value)} required />
+      </div>
+      <div className="form-input">
+        <label htmlFor="comment">Comment:</label>
+        <textarea id="comment" name="comment" value={comment} onChange={(event) => setComment(event.target.value)} rows="5" required></textarea>
+      </div>
+      <div className="form-input">
+        <label htmlFor="petImage">Pet Image:</label>
+        <input type="file" id="petImage" name="petImage" onChange={(event) => handleImageUpload(event)} required />
+      </div>
+      <button type="submit" className="submit-form">Submit</button>
+    </form>
+  </div>
+  
+  
   );
 }
 
