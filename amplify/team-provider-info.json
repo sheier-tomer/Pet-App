@@ -16,5 +16,23 @@
         "petapp14d65a7c": {}
       }
     }
+  },
+  "main": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-petapp-main-153053-authRole",
+      "UnauthRoleArn": "arn:aws:iam::620339869704:role/amplify-petapp-main-153053-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::620339869704:role/amplify-petapp-main-153053-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-petapp-main-153053-deployment",
+      "UnauthRoleName": "amplify-petapp-main-153053-unauthRole",
+      "StackName": "amplify-petapp-main-153053",
+      "StackId": "arn:aws:cloudformation:us-east-1:620339869704:stack/amplify-petapp-main-153053/898ac980-de1f-11ed-bd95-0a45ed036615",
+      "AmplifyAppId": "d38uuho851uvfv"
+    },
+    "categories": {
+      "auth": {
+        "petapp14d65a7c": {}
+      }
+    }
   }
 }
