@@ -6,29 +6,59 @@ function Form() {
   const [petType, setpetType] = useState('');
   const [comment, setComment] = useState('');
   const [file, setFile] = useState(null);
+  const [images, setImages] = useState([]);
 
-  const handleSubmit = (event) => {
+  const API_ENDPOINT = "https://crx7wfl54d.execute-api.us-east-1.amazonaws.com/default/get-presigned-url";
+
+  const handleSubmit = async (event) => {
     event.preventDefault();
-
-
     let uidnum = Math.floor(Math.random() * 10000);
     uidnum = uidnum.toString();
   
-
-    console.log(`petName: ${petName}, petType: ${petType}, Comment: ${comment}, file: ${file} `);
-    //const { petName, petType, comment } = this.state;å
-    // You can replace the console.log statement with your own code to handle the form submission.
-    //works but diables cross origin in developr mode
-    axios.post('https://84ilpny30g.execute-api.us-east-1.amazonaws.com/default/petSeverlessAppFunction', { name: petName, uid: uidnum, type:petType,  message: comment, fileName: file.name } )
-      .then(response => {
-        // Handle response
-        console.log("info sent to db")
-      })
-      .catch(error => {
-        // Handle error
-        console.log("info did not send to db")
+    console.log(`petName: ${petName}, petType: ${petType}, Comment: ${comment}, file: ${file.name}`);
+    
+    try {
+      // GET request: presigned URL
+      const response = await axios({
+        method: "GET",
+        url: API_ENDPOINT,
+        params: { filename: file.name }
+      });
+  
+      // PUT request: upload file to S3
+      await fetch(response.data.uploadURL, {
+        method: "PUT",
+        body: file,
       });
 
+      // Post data to serverless function
+      await axios.post('https://84ilpny30g.execute-api.us-east-1.amazonaws.com/default/petSeverlessAppFunction', { name: petName, uid: uidnum, type: petType, message: comment, fileName: file.name } )
+      console.log("Info sent to db")
+      
+      // Reset form
+      setpetName('');
+      setpetType('');
+      setComment('');
+      setFile(null);
+
+
+      // GET request: fetch all images in S3 bucket
+      const imagesResponse = await axios({
+        method: "GET",
+        url: API_ENDPOINT,
+        params: { fetchImages: true }
+      });
+
+      // Update images state with fetched images
+      setImages(imagesResponse.data);
+      console.log("Images fetched from S3:", imagesResponse.data.images);
+      
+
+    } catch (error) {
+      console.error(error);
+      console.log("Upload failed");
+
+    }
   }
 
 
@@ -61,6 +91,8 @@ function Form() {
       </div>
       <button type="submit" className="submit-form">Submit</button>
     </form>
+
+
   </div>
   
   
