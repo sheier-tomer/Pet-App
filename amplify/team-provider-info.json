@@ -1,4 +1,25 @@
 {
+  "main": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-petapp-main-25444-authRole",
+      "UnauthRoleArn": "arn:aws:iam::620339869704:role/amplify-petapp-main-25444-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::620339869704:role/amplify-petapp-main-25444-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-petapp-main-25444-deployment",
+      "UnauthRoleName": "amplify-petapp-main-25444-unauthRole",
+      "StackName": "amplify-petapp-main-25444",
+      "StackId": "arn:aws:cloudformation:us-east-1:620339869704:stack/amplify-petapp-main-25444/612d3c80-d8dd-11ed-bb40-0e54b74d9af9",
+      "AmplifyAppId": "d3fzblwk749mh8"
+    },
+    "categories": {
+      "auth": {
+        "petapp14d65a7c": {}
+      },
+      "storage": {
+        "petTomerBucket": {}
+      }
+    }
+  },
   "dev": {
     "awscloudformation": {
       "AuthRoleName": "amplify-petapp-dev-223738-authRole",
@@ -10,24 +31,6 @@
       "StackName": "amplify-petapp-dev-223738",
       "StackId": "arn:aws:cloudformation:us-east-1:620339869704:stack/amplify-petapp-dev-223738/fe8bac30-d8da-11ed-b123-0e6676530f83",
       "AmplifyAppId": "d81xyhw794l1x"
-    },
-    "categories": {
-      "auth": {
-        "petapp14d65a7c": {}
-      }
-    }
-  },
-  "main": {
-    "awscloudformation": {
-      "AuthRoleName": "amplify-petapp-main-153053-authRole",
-      "UnauthRoleArn": "arn:aws:iam::620339869704:role/amplify-petapp-main-153053-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::620339869704:role/amplify-petapp-main-153053-authRole",
-      "Region": "us-east-1",
-      "DeploymentBucketName": "amplify-petapp-main-153053-deployment",
-      "UnauthRoleName": "amplify-petapp-main-153053-unauthRole",
-      "StackName": "amplify-petapp-main-153053",
-      "StackId": "arn:aws:cloudformation:us-east-1:620339869704:stack/amplify-petapp-main-153053/898ac980-de1f-11ed-bd95-0a45ed036615",
-      "AmplifyAppId": "d38uuho851uvfv"
     },
     "categories": {
       "auth": {
