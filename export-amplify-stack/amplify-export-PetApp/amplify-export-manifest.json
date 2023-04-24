@@ -1,0 +1,99 @@
+{
+  "stackName": "amplify-petapp-main-25444",
+  "props": {
+    "templateFile": "root-stack-template.json",
+    "parameters": {
+      "AuthRoleName": "amplify-petapp-main-25444-authRole",
+      "UnauthRoleName": "amplify-petapp-main-25444-unauthRole",
+      "DeploymentBucketName": "amplify-petapp-main-25444-deployment"
+    },
+    "preserveLogicalIds": true,
+    "loadNestedStacks": {
+      "authpetapp14d65a7c": {
+        "templateFile": "auth/petapp14d65a7c/petapp14d65a7c-cloudformation-template.json",
+        "parameters": {
+          "identityPoolName": "petapp14d65a7c_identitypool_14d65a7c",
+          "allowUnauthenticatedIdentities": true,
+          "resourceNameTruncated": "petapp14d65a7c",
+          "userPoolName": "petapp14d65a7c_userpool_14d65a7c",
+          "autoVerifiedAttributes": [
+            "email"
+          ],
+          "mfaConfiguration": "OFF",
+          "mfaTypes": [
+            "SMS Text Message"
+          ],
+          "smsAuthenticationMessage": "Your authentication code is {####}",
+          "smsVerificationMessage": "Your verification code is {####}",
+          "emailVerificationSubject": "Your verification code",
+          "emailVerificationMessage": "Your verification code is {####}",
+          "defaultPasswordPolicy": false,
+          "passwordPolicyMinLength": 8,
+          "passwordPolicyCharacters": [],
+          "requiredAttributes": [
+            "email"
+          ],
+          "aliasAttributes": [],
+          "userpoolClientGenerateSecret": false,
+          "userpoolClientRefreshTokenValidity": 30,
+          "userpoolClientWriteAttributes": [
+            "email"
+          ],
+          "userpoolClientReadAttributes": [
+            "email"
+          ],
+          "userpoolClientLambdaRole": "petapp14d65a7c_userpoolclient_lambda_role",
+          "userpoolClientSetAttributes": false,
+          "sharedId": "14d65a7c",
+          "resourceName": "petapp14d65a7c",
+          "authSelections": "identityPoolAndUserPool",
+          "useDefault": "default",
+          "userPoolGroupList": [],
+          "serviceName": "Cognito",
+          "usernameCaseSensitive": false,
+          "useEnabledMfas": true,
+          "breakCircularDependency": true,
+          "dependsOn": [],
+          "env": "main"
+        },
+        "preserveLogicalIds": true,
+        "loadNestedStacks": {}
+      },
+      "storagepetTomerBucket": {
+        "templateFile": "storage/petTomerBucket/cloudformation-template.json",
+        "parameters": {
+          "bucketName": "petappc53325ce7d594eef893ab2d057c4d05e",
+          "selectedGuestPermissions": [
+            "s3:PutObject",
+            "s3:GetObject",
+            "s3:ListBucket"
+          ],
+          "selectedAuthenticatedPermissions": [
+            "s3:PutObject",
+            "s3:GetObject",
+            "s3:ListBucket",
+            "s3:DeleteObject"
+          ],
+          "s3PrivatePolicy": "Private_policy_0d7c1c15",
+          "s3ProtectedPolicy": "Protected_policy_0d7c1c15",
+          "s3PublicPolicy": "Public_policy_0d7c1c15",
+          "s3ReadPolicy": "read_policy_0d7c1c15",
+          "s3UploadsPolicy": "Uploads_policy_0d7c1c15",
+          "authPolicyName": "s3_amplify_0d7c1c15",
+          "unauthPolicyName": "s3_amplify_0d7c1c15",
+          "AuthenticatedAllowList": "ALLOW",
+          "GuestAllowList": "ALLOW",
+          "s3PermissionsAuthenticatedPrivate": "s3:PutObject,s3:GetObject,s3:DeleteObject",
+          "s3PermissionsAuthenticatedProtected": "s3:PutObject,s3:GetObject,s3:DeleteObject",
+          "s3PermissionsAuthenticatedPublic": "s3:PutObject,s3:GetObject,s3:DeleteObject",
+          "s3PermissionsAuthenticatedUploads": "s3:PutObject",
+          "s3PermissionsGuestPublic": "s3:PutObject,s3:GetObject",
+          "s3PermissionsGuestUploads": "s3:PutObject",
+          "env": "main"
+        },
+        "preserveLogicalIds": true,
+        "loadNestedStacks": {}
+      }
+    }
+  }
+}

@@ -1,0 +1,12 @@
+[
+  {
+    "category": "auth",
+    "resourceName": "petapp14d65a7c",
+    "service": "Cognito"
+  },
+  {
+    "category": "storage",
+    "resourceName": "petTomerBucket",
+    "service": "S3"
+  }
+]

@@ -1,45 +1,140 @@
+body {
+  background-color: #f1f5f5;
+  color: #555;
+  font-family: Arial, sans-serif;
+}
+
 .form-container {
   max-width: 500px;
-  margin: 0 auto;
+  margin: 50px auto;
   padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  opacity: 0;
-  transition: opacity 0.5s ease-in-out;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  background-color: #d9e7d7;
+  text-align: center;
 }
 
 .form-container h1 {
-  text-align: center;
+  font-size: 36px;
+  margin-bottom: 30px;
+  color: #3d7348;
 }
 
 .form-container label {
   display: block;
   margin-bottom: 10px;
+  font-size: 18px;
+  color: #3d7348;
 }
 
-.form-container input,
+.form-container input[type="text"],
+.form-container input[type="petType"],
 .form-container textarea,
-.form-container button {
+.form-container input[type="file"] {
   display: block;
   width: 100%;
   padding: 10px;
   border-radius: 5px;
-  border: 1px solid #ccc;
-}
-
-.form-container button {
-  background-color: #4CAF50;
-  color: white;
   border: none;
-  cursor: pointer;
+  margin-bottom: 20px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+  background-color: #e3f0db;
+  color: #3d7348;
+  font-size: 16px;
 }
 
-.submit-form {
+.form-container textarea {
+  height: 100px;
+}
+
+.form-container .upload-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #5da493;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.form-container .upload-button:hover {
+  background-color: #45857b;
+}
+
+.form-container .file-name {
+  display: inline-block;
+  margin-left: 10px;
+  font-size: 16px;
+  color: #555;
+}
+
+.form-container button[type="submit"] {
   display: block;
-  background-color: #4CAF50;
-  color: white;
-  padding: 5px 10px;
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: #5da493;
+  color: #fff;
+  cursor: pointer;
+  font-size: 18px;
+  transition: all 0.2s;
+}
+
+.form-container button[type="submit"]:hover,
+.see-photos-button:hover {
+  background-color: #45857b;
+}
+
+.see-photos-button {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  background-color: #5da493;
+  color: #fff;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  font-size: 18px;
+  transition: all 0.2s;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  margin: 20px 0;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+li img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+li p {
+  margin: 0;
+  font-size: 14px;
+  text-align: center;
+  max-width: 80%;
+}
+
+
+.page-title {
+  font-size: 32px;
+  font-weight: bold;
+  text-align: center;
+  color: #3d7348;
+  margin-bottom: 50px;
 }
